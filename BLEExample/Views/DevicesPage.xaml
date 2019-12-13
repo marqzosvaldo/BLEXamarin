@@ -1,0 +1,89 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<ContentPage
+    xmlns="http://xamarin.com/schemas/2014/forms"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    xmlns:controls="clr-namespace:ImageCircle.Forms.Plugin.Abstractions;assembly=ImageCircle.Forms.Plugin"
+    x:Class="BLEExample.Views.DevicesPage"
+    Title="{Binding Title}">
+    <ContentPage.Content>
+        <StackLayout>
+            <RefreshView
+                IsRefreshing="{Binding IsRefreshing}"
+                Command="{Binding ScanDevicesCommand}">
+                <CollectionView
+                    x:Name="collectionDev"
+                    ItemsSource="{Binding DeviceCollection}"
+                    SelectionChanged="OnCollectionViewSelectionChanged"
+                    SelectionMode="{Binding SelectionMode}">
+
+                    <CollectionView.ItemTemplate>
+                        <DataTemplate>
+
+
+                            <StackLayout
+                                Margin="0,5,0,0"
+                                Orientation="Horizontal">
+                                <controls:CircleImage
+                                    Margin="10,0"
+                                    VerticalOptions="Center"
+                                    BorderColor="LightGray"
+                                    BorderThickness="1"
+                                    Source="bluetooth.png"
+                                    HorizontalOptions="Center"
+                                    Aspect="Fill">
+
+                                    <controls:CircleImage.WidthRequest>
+                                        <OnPlatform
+                                            x:TypeArguments="x:Double">
+                                            <On
+                                                Platform="Android, iOS">55</On>
+                                            <On
+                                                Platform="WinPhone">75</On>
+                                        </OnPlatform>
+                                    </controls:CircleImage.WidthRequest>
+                                    <controls:CircleImage.HeightRequest>
+                                        <OnPlatform
+                                            x:TypeArguments="x:Double">
+                                            <On
+                                                Platform="Android, iOS">55</On>
+                                            <On
+                                                Platform="WinPhone">75</On>
+                                        </OnPlatform>
+                                    </controls:CircleImage.HeightRequest>
+                                </controls:CircleImage>
+                                <StackLayout
+                                    VerticalOptions="Center"
+                                    Spacing="0">
+                                    <Label
+                                        TextColor="#323742"
+                                        Text="{Binding NativeDevice.Name}"
+                                        FontFamily="{StaticResource Lato_Medium}"
+                                        FontSize="Medium" />
+                                    <Label
+                                        TextColor="#323742"
+                                        Text="{Binding NativeDevice.Address}"
+                                        FontFamily="{StaticResource Lato_Regular}"
+                                        FontSize="Small" />
+                                </StackLayout>
+                                <StackLayout
+                                    HorizontalOptions="EndAndExpand">
+                                    <Button
+
+                                        BackgroundColor="LightGray"
+                                        CornerRadius="20"
+                                        Text="&#xf694;"
+                                        FontFamily="{StaticResource Font_Awesome}"
+                                        Command="{Binding BindingContext.DesconnectCommand, Source={x:Reference collectionDev}}"
+                                        CommandParameter="{Binding .}" />
+                                    <Label FontSize="Micro" HorizontalTextAlignment="Center" Text="Desconectar"/>
+                                </StackLayout>
+                            </StackLayout>
+
+
+                        </DataTemplate>
+                    </CollectionView.ItemTemplate>
+                </CollectionView>
+            </RefreshView>
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>

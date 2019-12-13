@@ -1,0 +1,17 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<Shell
+    xmlns="http://xamarin.com/schemas/2014/forms"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    xmlns:view="clr-namespace:BLEExample.Views"
+    x:Class="BLEExample.AppShell"
+    FlyoutBehavior="Flyout">
+
+
+    <ShellItem
+        Route="devices">
+        <ShellContent
+            
+            Route="contentdevices"
+            ContentTemplate="{DataTemplate view:DevicesPage}" />
+    </ShellItem>
+</Shell>

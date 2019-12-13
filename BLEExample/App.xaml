@@ -1,0 +1,62 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Application
+    xmlns="http://xamarin.com/schemas/2014/forms"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    xmlns:d="http://xamarin.com/schemas/2014/forms/design"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    mc:Ignorable="d"
+    x:Class="BLEExample.App">
+    <Application.Resources>
+        <ResourceDictionary>
+            <OnPlatform x:Key="Lato_Bold_Italic"
+                        x:TypeArguments="x:String">
+                <On Platform="Android"
+                    Value="Fonts/Lato-BoldItalic.ttf#Lato-Bold-Italic" />
+                <On Platform="iOS"
+                    Value="Lato-BoldItalic" />
+            </OnPlatform>
+            <OnPlatform x:Key="Lato_Light"
+                        x:TypeArguments="x:String">
+                <On Platform="Android"
+                    Value="Fonts/Lato-Light.ttf#Lato-Light" />
+                <On Platform="iOS"
+                    Value="Lato-Light" />
+            </OnPlatform>
+            <OnPlatform x:Key="Lato_Regular"
+                        x:TypeArguments="x:String">
+                <On Platform="Android"
+                    Value="Fonts/Lato-Regular.ttf#Lato-Regular" />
+                <On Platform="iOS"
+                    Value="Lato-Regular" />
+            </OnPlatform>
+            <OnPlatform x:Key="Lato_Bold"
+                        x:TypeArguments="x:String">
+                <On Platform="Android"
+                    Value="Fonts/Lato-Bold.ttf#Lato-Bold" />
+                <On Platform="iOS"
+                    Value="Lato-Bold" />
+            </OnPlatform>
+            <OnPlatform x:Key="Lato_Medium"
+                        x:TypeArguments="x:String">
+                <On Platform="Android"
+                    Value="Fonts/Lato-Medium.ttf#Lato-Medium" />
+                <On Platform="iOS"
+                    Value="Lato-Medium" />
+            </OnPlatform>
+            <OnPlatform x:Key="Lato_Semibold"
+                        x:TypeArguments="x:String">
+                <On Platform="Android"
+                    Value="Fonts/Lato-Semibold.ttf#Lato-Semibold" />
+                <On Platform="iOS"
+                    Value="Lato-Semibold" />
+            </OnPlatform>
+            <OnPlatform x:Key="Font_Awesome"
+                        x:TypeArguments="x:String">
+                <On Platform="Android"
+                    Value="Fonts/fa-solid-900.ttf#Font Awesome 5 Pro" />
+                <On Platform="iOS"
+                    Value="Font Awesome 5 Pro" />
+            </OnPlatform>
+            </ResourceDictionary>
+    </Application.Resources>
+</Application>
